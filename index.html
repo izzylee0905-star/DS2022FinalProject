@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <section class="card">
+      <div class="controls">
+        <input type="file" id="fileInput" accept="image/*">
+        <button id="uploadBtn" onclick="send()">Upload</button>
+      </div>
+      <span id="uploadStatus"></span>
+    </section>
+
+    <section class="card">
+      <h3>Gallery</h3>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+<script>
+async function send() {
+  const fileInput = document.getElementById('fileInput');
+  const file = fileInput.files[0];
+  const status = document.getElementById('uploadStatus');
+  if(!file) { status.textContent = "No file chosen"; return; }
+
+  const fd = new FormData();
+  fd.append('file', file);
+  status.textContent = "Uploading…";
+
+  try {
+    const res = await fetch("/api/v1/upload", { method: "POST", body: fd });
+    const data = await res.json();
+    if(data.ok) {
+      status.textContent = "Uploaded!";
+      fileInput.value = "";
+      loadGallery();
+    } else {
+      status.textContent = data.error || "Upload failed";
+    }
+  } catch(err) {
+    console.error(err);
+    status.textContent = "Upload error";
+  }
+}
+
+async function loadGallery() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = "";
+  try {
+    const res = await fetch("/api/v1/gallery");
+    const data = await res.json();
+    if(data.ok) {
+      data.gallery.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
+        img.className = "thumb";
+        grid.appendChild(img);
+      });
+    }
+  } catch(err) {
+    console.error(err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadGallery);
+</script>
+</body>
+</html>
+

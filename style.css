@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: 'Nanum Pen Script', cursive;
+  background: url('traveldiary.svg') no-repeat top center;
+  background-size: cover;
+}
+
+main {
+  max-width: 960px;
+  margin: 250px auto 50px; /* increased top margin to push content below "Travels" title */
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: #9c7a97;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+input[type=file] {
+  background-color: #bbdef0;
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background-color: #003459;
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumb {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
