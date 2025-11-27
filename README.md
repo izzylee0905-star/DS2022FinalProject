@@ -41,3 +41,10 @@ My app didn’t require any external secrets or API keys since everything was cr
 
 ### Ops
 Container logs are visible when the container is started and running with the use of the Docker command. I am able to monitor uploads and see that my requests are processing and if uploads are working. When considering scaling, the app is designed locally in a single container. Scaling to multiple users or containers may require more than just local file storage, and I would have to consider using Azure Blob Storage instead. Additionally, a limitation that I discovered was the need to rebuild my container evertytime I updated my HTML and CSS files. I discussed this in the tradeoff portion.
+
+## 5) Results & Evaluation
+### Screenshots
+
+![Gallery Screenshot](assets/DS2022FinalProject gallery curl.png)
+
+![Upload Screenshot](assets/DS2022FinalProject_upload_curl.png)
