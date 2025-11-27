@@ -56,3 +56,11 @@ The app runs locally in one Docker container, and resource usage is low.
 * ability to upload different image types: PNG, JPG, JPEG
 * non-image types are unable to be uploaded
 * access gallery endpoint where JSON is returned with accurate image paths
+
+## 6) What’s Next
+I’ve already thought of a few different improvements I can make and features I can include in my project. I never tested my project on mobile as I created everything on desktop; I would try to make the layout and features more mobile-friendly in the future. Another improvement I can make is moving the project from using local file storage to Azure Blob Storage, in order to enlarge scaling. Regarding “fun” features I thought of, I could make the diary feel more customizable by creating a feature where users can write captions corresponding to the image they upload. I can also make the app more user-friendly and practical by allowing users to create folders once there happens to be an overwhelming amount of photos displayed in the gallery. 
+
+## 7) Links 
+GitHub Repo: [DS2022FinalProject](https://github.com/izzylee0905-star/DS2022FinalProject)
+
+Public Cloud App: 
