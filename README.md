@@ -44,7 +44,15 @@ Container logs are visible when the container is started and running with the us
 
 ## 5) Results & Evaluation
 ### Screenshots
+Gallery curl command:
+![Gallery Screenshot](assets/DS2022FinalProject_gallery_curl.png)
 
-![Gallery Screenshot](assets/DS2022FinalProject gallery curl.png)
-
+Upload curl command:
 ![Upload Screenshot](assets/DS2022FinalProject_upload_curl.png)
+### Performance notes
+The app runs locally in one Docker container, and resource usage is low.
+
+### Validation and tests performed
+* ability to upload different image types: PNG, JPG, JPEG
+* non-image types are unable to be uploaded
+* access gallery endpoint where JSON is returned with accurate image paths
