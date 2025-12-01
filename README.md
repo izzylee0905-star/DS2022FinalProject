@@ -9,7 +9,9 @@ I wanted to keep my travel diary simplistic and minimalistic; going into the pro
 
 ## 2) System Overview
 * Course Concept: The specific module concept I used was Flask API.
-* Architecture Diagram:![Architecture Diagram](assets/DS_2022_Final_Project_Architecture_Diagram-2.png)
+* Architecture Diagram:
+<img src="assets/DS_2022_Final_Project_Architecture_Diagram-2.png" width="300"/>
+
 * Data/Models/Services: Users are able to upload their own images, ranging in size and format (JPG or PNG). The background of the web app itself is an svg file that I created myself on Canva that contains free-to-use graphic elements. Python packages used include Flask, Werkzeug, and python-dotenv. I also created an Azure storage blob, though my app ultimately ended up storing images locally.
 
 ## 3) How to Run (Local)
@@ -31,10 +33,10 @@ curl -X POST -F "file=@path/to/your/image.jpg" http://localhost:5001/api/v1/uplo
 ```
 ## 4) Design Decisions
 ### Why this concept
-I chose to use Flask API to create an image gallery because I wanted to create a scrapbook, but in digital form. I took inspiration from Case 07, which is where I first learned about Flask API and its advantages in handling file uploads. The difference between the app made in Case 07 and my app is the use of local file storage rather than Azure Blob Storage. I found it simpler to use local file storage, and it prevented headaches at times. Additionally, local file storage was helpful in saving uploaded images even when the container was stopped and restrated. I could’ve alternatively used Azure Blob Storage, like Case 07 did, but I ran into some different issues while progressing through my project; I started off with using Azure Blob Storage before I found it easier to use local file storage instead.
+I chose to use Flask API to create an image gallery because I wanted to create a scrapbook, but in digital form. I took inspiration from Case 07, which is where I first learned about Flask API and its advantages in handling file uploads. The difference between the app made in Case 07 and my app is the use of local file storage rather than Azure Blob Storage. I found it simpler to use local file storage, and it prevented headaches at times. Additionally, local file storage was helpful in saving uploaded images even when the container was stopped and restarted. I could’ve alternatively used Azure Blob Storage, like Case 07 did, but I ran into some different issues while progressing through my project; I actually started off with using Azure Blob Storage before I found it easier to use local file storage instead.
 
 ### Tradeoffs
-Since my app uses Flask, there’s a tradeoff when handling larger images; however, it handles well with images on a smaller scale. I personally haven’t run into many problems. My app also runs locally, which doesn’t have added costs. Regardless, its deployment on Azure would require credit. I also created a container through Docker which did add a layer of complexity; however, the container enables for more consistency, isolation, and efficiency. Nevertheless, the biggest tradeoff I experienced when using Docker to develop my app was the need to rebuild my container everytime I edited HTML and CSS. I edited these files several different times, so it did get repetitive when rebuilding and rerunning my container every time.
+Since my app uses Flask, there’s a tradeoff when handling larger images; however, it handles well with images on a smaller scale. I personally haven’t run into many problems. My app also runs locally, which doesn’t have added costs. I created a container through Docker which did add a layer of complexity; however, the container enables for more consistency, isolation, and efficiency. Nevertheless, the biggest tradeoff I experienced when using Docker to develop my app was the need to rebuild my container everytime I edited HTML and CSS. I edited these files several different times, so it did get repetitive when rebuilding and rerunning my container every time.
 
 ### Security
 My app didn’t require any external secrets or API keys since everything was created locally. I didn’t have to worry about sensitive data. Regarding input validation, users are only able to upload images, which is the only validated upload type. This allows protection against unvalidated upload types or malicious uploads. Again, since there weren't any API keys or other private elements, no personally identifiable information is used or stored by my app. Additionally, uploaded images don’t reveal anything personal about the user.
@@ -62,5 +64,3 @@ I’ve already thought of a few different improvements I can make and features I
 
 ## 7) Links 
 GitHub Repo: [DS2022FinalProject](https://github.com/izzylee0905-star/DS2022FinalProject)
-
-Public Cloud App: 
