@@ -9,7 +9,7 @@ I wanted to keep my travel diary simplistic and minimalistic; going into the pro
 
 ## 2) System Overview
 * Course Concept: The specific module concept I used was Flask API.
-* Architecture Diagram:
+* Architecture Diagram:![Architecture Diagram](assets/DS_2022_Final_Project_Architecture_Diagram-2.png)
 * Data/Models/Services: Users are able to upload their own images, ranging in size and format (JPG or PNG). The background of the web app itself is an svg file that I created myself on Canva that contains free-to-use graphic elements. Python packages used include Flask, Werkzeug, and python-dotenv. I also created an Azure storage blob, though my app ultimately ended up storing images locally.
 
 ## 3) How to Run (Local)
